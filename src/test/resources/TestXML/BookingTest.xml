@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Booking Tests">
+    <test name="Auth Token">
+        <classes>
+            <class name="io.github.rsshekhawat.Test_APIs.BookingTests">
+                <methods>
+                    <include name="getAuthToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Create Booking">
+        <parameter name="firstname" value="FirstName"/>
+        <parameter name="lastname" value="LastName"/>
+        <parameter name="totalPrice" value="120"/>
+        <parameter name="depositPaid" value="true"/>
+        <parameter name="additionalNeeds" value="Breakfast"/>
+        <parameter name="checkIn" value="2018-01-01"/>
+        <parameter name="checkOut" value="2019-01-01"/>
+        <classes>
+            <class name="io.github.rsshekhawat.Test_APIs.BookingTests">
+                <methods>
+                    <include name="createBooking"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Booking">
+        <parameter name="id" value="1672"/>
+        <parameter name="firstname" value="UpdatedFirstName"/>
+        <parameter name="lastname" value="UpdatedLastName"/>
+        <parameter name="totalPrice" value="1200"/>
+        <parameter name="depositPaid" value="true"/>
+        <parameter name="additionalNeeds" value="Lunch"/>
+        <parameter name="checkIn" value="2018-01-02"/>
+        <parameter name="checkOut" value="2020-01-02"/>
+        <classes>
+            <class name="io.github.rsshekhawat.Test_APIs.BookingTests">
+                <methods>
+                    <include name="updateBooking"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
